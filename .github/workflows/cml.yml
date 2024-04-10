@@ -1,0 +1,18 @@
+name:model-loan
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+   
+    steps:
+      - uses: actions/checkout@v3
+     
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        run: |
+          # Your ML workflow goes here
+         
+          python Loan Prediction _End_to_end.ipynb
+
+          echo "MODEL METRICS"
+          cat metrics.txt
